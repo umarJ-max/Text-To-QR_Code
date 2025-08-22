@@ -1,0 +1,44 @@
+body {
+    background: #f4f4f4;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 400px;
+    margin: 60px auto;
+    background: #fff;
+    padding: 30px 20px 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+button {
+    padding: 10px 20px;
+    background: #0070f3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+#qrcode {
+    margin: 20px 0;
+}
