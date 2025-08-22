@@ -18,12 +18,12 @@ A beautiful, modern web application to instantly generate QR codes from any text
 
 ## 🖥️ Demo
 
-[🌐 Live Demo](https://text-to-qr-code-umarj.vercel.app/) *(Update this URL after deployment)*
+[🌐 Live Demo](https://text-to-qr-code-eta.vercel.app/)
 
 ## 🚀 Quick Start
 
 ### Option 1: Use Online
-Simply visit the [live demo](https://text-to-qr-code-umarj.vercel.app/) and start generating QR codes instantly!
+Simply visit the [live demo](https://text-to-qr-code-eta.vercel.app/) and start generating QR codes instantly!
 
 ### Option 2: Run Locally
 ```bash
