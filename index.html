@@ -8,11 +8,20 @@
 </head>
 <body>
     <div class="container">
-        <h1>Text to QR Code</h1>
-        <input type="text" id="text-input" placeholder="Enter your text here">
-        <button id="generate-btn">Generate QR Code</button>
-        <div id="qrcode"></div>
-        <button id="download-btn" style="display:none;">Download QR Code</button>
+        <div class="branding">
+            <img src="https://avatars.githubusercontent.com/u/102366687?v=4" alt="Umar J Logo" class="logo">
+            <h1>Text to QR Code</h1>
+            <p class="subtitle">by <span class="brand-name">Umar J</span></p>
+        </div>
+        <div class="card">
+            <input type="text" id="text-input" placeholder="Enter your text here">
+            <button id="generate-btn">Generate QR Code</button>
+            <div id="qrcode"></div>
+            <button id="download-btn" style="display:none;">Download QR Code</button>
+        </div>
+        <footer>
+            <p>Made with <span style="color:#e25555;">&#10084;</span> by <a href="https://github.com/umarJ-max" target="_blank">Umar J</a></p>
+        </footer>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="script.js"></script>
