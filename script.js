@@ -20,20 +20,25 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         if (qrCanvas || qrImg) {
             downloadBtn.style.display = 'inline-block';
             downloadBtn.onclick = function() {
-                let dataURL;
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = 512;
+                canvas.height = 512;
+                
+                ctx.fillStyle = 'white';
+                ctx.fillRect(0, 0, 512, 512);
+                
                 if (qrCanvas) {
-                    dataURL = qrCanvas.toDataURL('image/png');
+                    ctx.drawImage(qrCanvas, 0, 0, 512, 512);
                 } else {
-                    const canvas = document.createElement('canvas');
-                    const ctx = canvas.getContext('2d');
-                    canvas.width = qrImg.width || 256;
-                    canvas.height = qrImg.height || 256;
-                    ctx.drawImage(qrImg, 0, 0);
-                    dataURL = canvas.toDataURL('image/png');
+                    ctx.drawImage(qrImg, 0, 0, 512, 512);
                 }
+                
+                const dataURL = canvas.toDataURL('image/png');
+                const filename = text.replace(/[^a-z0-9]/gi, '_').toLowerCase() + '_qrcode.png';
                 const link = document.createElement('a');
                 link.href = dataURL;
-                link.download = 'qrcode.png';
+                link.download = filename;
                 link.click();
             };
         }
