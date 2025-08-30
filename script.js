@@ -22,16 +22,19 @@ document.getElementById('generate-btn').addEventListener('click', function() {
             downloadBtn.onclick = function() {
                 const canvas = document.createElement('canvas');
                 const ctx = canvas.getContext('2d');
-                canvas.width = 512;
-                canvas.height = 512;
+                canvas.width = 400;
+                canvas.height = 400;
                 
                 ctx.fillStyle = 'white';
-                ctx.fillRect(0, 0, 512, 512);
+                ctx.fillRect(0, 0, 400, 400);
+                
+                const padding = 40;
+                const qrSize = 320;
                 
                 if (qrCanvas) {
-                    ctx.drawImage(qrCanvas, 0, 0, 512, 512);
+                    ctx.drawImage(qrCanvas, padding, padding, qrSize, qrSize);
                 } else {
-                    ctx.drawImage(qrImg, 0, 0, 512, 512);
+                    ctx.drawImage(qrImg, padding, padding, qrSize, qrSize);
                 }
                 
                 const dataURL = canvas.toDataURL('image/png');
