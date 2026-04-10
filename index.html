@@ -1,28 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text to QR Code Generator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <div class="branding">
-            <h1>Text to QR Code</h1>
-            <p class="subtitle">Created by <span class="brand-name">Umar J</span></p>
+
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="page">
+
+    <header class="header">
+      <div class="logo-pill">QR</div>
+      <span class="header-title">Generator</span>
+    </header>
+
+    <main class="main">
+
+      <div class="hero">
+        <h1 class="hero-title">Turn Any Text Into<br /><span class="accent">a QR Code</span></h1>
+        <p class="hero-sub">Type a URL, message, or anything — get a scannable code instantly.</p>
+      </div>
+
+      <div class="card">
+
+        <div class="input-group">
+          <label class="input-label" for="text-input">Your Text / URL</label>
+          <div class="input-wrap">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+            <input type="text" id="text-input" placeholder="https://example.com or any text…" autocomplete="off" />
+            <button class="clear-btn" id="clear-btn" title="Clear">✕</button>
+          </div>
         </div>
-        <div class="card">
-            <input type="text" id="text-input" placeholder="Enter your text here">
-            <button id="generate-btn">Generate QR Code</button>
-            <div id="qrcode"></div>
-            <button id="download-btn" style="display:none;">Download QR Code</button>
+
+        <button id="generate-btn" class="btn-generate">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Generate QR Code
+        </button>
+
+        <div id="result-area" class="result-area hidden">
+          <div class="result-header">
+            <span class="result-label">Your QR Code</span>
+            <div class="dots">
+              <span style="background:#ff6b6b"></span>
+              <span style="background:#ffd93d"></span>
+              <span style="background:#6bcb77"></span>
+            </div>
+          </div>
+          <div id="qrcode" class="qr-box"></div>
+          <p class="scanned-text" id="scanned-text"></p>
+          <button id="download-btn" class="btn-download">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download PNG
+          </button>
         </div>
-        <footer>
-            <p>Made with <span style="color:#e25555;">&#10084;</span> by <a href="https://github.com/umarJ-max" target="_blank">Umar J</a></p>
-        </footer>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script src="script.js"></script>
+
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      Made with <span class="heart">&#10084;</span> by <a href="https://github.com/umarJ-max" target="_blank">Umar J</a>
+    </footer>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
