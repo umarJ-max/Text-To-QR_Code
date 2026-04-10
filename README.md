@@ -37,8 +37,6 @@ python -m http.server 8000
 2. **Generate** - Click the "Generate QR Code" button
 3. **Download** - Click "Download QR Code" to save the image
 
-![Usage Demo](https://via.placeholder.com/600x400/0070f3/ffffff?text=Usage+Demo)
-
 ## 📁 Project Structure
 
 ```
